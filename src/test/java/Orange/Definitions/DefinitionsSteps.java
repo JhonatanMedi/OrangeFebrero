@@ -3,6 +3,7 @@ package Orange.Definitions;
 import Orange.Pages.LoginPage;
 import Orange.Pages.PimPage;
 import Orange.Steps.Conexion;
+import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.WebDriver;
 import io.cucumber.java.en.Given;
@@ -40,4 +41,22 @@ public class DefinitionsSteps {
         this.pimPage.fillOutAddEmployee(firstName,middle,lastName);
     }
 
+    @When("^the user access to the list employee$")
+    public void llegarListEmployee(){
+        this.pimPage = new PimPage(driver);
+        this.pimPage.llegarListEmployee();
+    }
+    
+    @When("^the user search job (.*)$")
+    public void searchJob(String jobTitle){
+        this.pimPage = new PimPage(driver);
+        this.pimPage.searchJob(jobTitle);
+    }
+
+
+    @Then("^the user search employee (.*)$")
+    public void searchEmployee(String employee) {
+        this.pimPage = new PimPage(driver);
+        this.pimPage.searchEmployee(employee);
+    }
 }

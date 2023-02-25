@@ -21,6 +21,12 @@ public class ButtonPages {
     @FindBy(how = How.XPATH, using = "//button[@type = 'submit']")
     public WebElement btnSave;
 
+    @FindBy(how = How.XPATH, using = "//nav[@aria-label = 'Topbar Menu']//ul//li//a[contains(text (), 'Employee List')]")
+    public WebElement btnListEmployee;
+
+    @FindBy(how = How.XPATH, using = "//button[@type = 'submit']")
+    public WebElement btnSearch;
+
     public ButtonPages(WebDriver driver){
         PageFactory.initElements(driver, this);
     }
@@ -45,4 +51,13 @@ public class ButtonPages {
         btnSave.click();
     }
 
+    public void btnListEmployee(){
+        btnListEmployee.isDisplayed();
+        btnListEmployee.click();
+    }
+
+    public void btnSearch(){
+        btnSearch.isDisplayed();
+        btnSearch.click();
+    }
 }
