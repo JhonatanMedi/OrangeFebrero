@@ -22,6 +22,9 @@ public class PimPage {
     @FindBy(how = How.XPATH, using = "//input[@placeholder= 'Last Name']")
     public WebElement txtLastName;
 
+    @FindBy(how = How.XPATH, using = "//input[@placeholder= 'Last Name']")
+    public WebElement txtLaspeptName;
+
     public PimPage(WebDriver driver) {
         PageFactory.initElements(driver, this);
         this.buttonPages = new ButtonPages(driver);
@@ -40,5 +43,4 @@ public class PimPage {
         insertDataBase.insertEmployee(firstName,middle,lastName);
         buttonPages.btnSave();
     }
-
 }

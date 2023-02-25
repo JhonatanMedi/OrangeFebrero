@@ -5,9 +5,7 @@ import Orange.Pages.PimPage;
 import Orange.Steps.Conexion;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.WebDriver;
-
 import io.cucumber.java.en.Given;
-
 import java.sql.SQLException;
 
 public class DefinitionsSteps {
@@ -16,7 +14,6 @@ public class DefinitionsSteps {
     private Conexion conexion = new Conexion();
     private LoginPage loginPage = new LoginPage(driver);
     private PimPage pimPage = new PimPage(driver);
-
 
     @Given("^abrir el navegador$")
     public void abrir_navegador() {
